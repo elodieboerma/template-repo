@@ -6,7 +6,9 @@ list of commands run/packages installed in terminal:
     *5 (install it if images are referenced directly in HTML file) npm install --save-dev html-loader*
     6 (installed webpack dev server): npm install --save-dev webpack-dev-server
     *7 run npm install to automatically install same dependencies as in template-repo*
-    *8 git branch gh-pages; don't forget to switch source branch to this in github pages*
+    *8 (once git push origin main has been run once):
+        git branch gh-pages
+        --don't forget to switch source branch to this in github pages*
     9 (installed ESLint): npm init @eslint/config@latest
     *10 (to run ESLint on any file or directory): npx eslint yourfile.js*
     11 (installed Prettier): npm install --save-dev --save-exact prettier
