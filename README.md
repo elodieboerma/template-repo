@@ -15,6 +15,7 @@ Prettier,
     --save-dev style-loader css-loader
     --save-dev webpack-dev-server
     --save-dev --save-exact prettier
+    npm install --save-dev jest
 
     (install ESLint): npm init @eslint/config@latest
 
