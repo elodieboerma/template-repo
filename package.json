@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "watch": "jest --watch *.js",
+    "watch": "jest --watch",
     "dev": "webpack serve --config webpack.dev.js",
     "syncChanges": "git checkout gh-pages && git merge main --no-edit",
     "build": "webpack --config webpack.prod.js",

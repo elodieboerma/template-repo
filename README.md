@@ -16,12 +16,11 @@ Prettier, Jest, to allow ESM usage with Jest, to allow eslint usage with Jest
     --save-dev jest
     // to allow ESM usage when Jest is installed
     --save-dev @babel/preset-env
+    --save-dev babel-jest
     --save-dev eslint-plugin-jest
 
 
     (install ESLint): npm init @eslint/config@latest
-
-    (run once to start Jest in watch mode to auto re-run tests when files are saved): npm run watch
 
     replace code in eslint.config.js with the following:
 
@@ -58,4 +57,5 @@ Prettier, Jest, to allow ESM usage with Jest, to allow eslint usage with Jest
         (to run it on tests): prettier --write "app/**/*.test.js"
     *5 (ensure everyone is using Pretter; if setup is CI; avoids merge conflicts/other collab issues):
         npx prettier . --check
-    *6 (change file names in eslint.config.js to match test files)
+    *6 (run to automatically run tests upon file saves): npm run watch
+    *7 (change file names in eslint.config.js to match test files)
