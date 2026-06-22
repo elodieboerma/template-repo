@@ -21,6 +21,8 @@ Prettier, Jest, to allow ESM usage with Jest, to allow eslint usage with Jest
 
     (install ESLint): npm init @eslint/config@latest
 
+    (run once to start Jest in watch mode to auto re-run tests when files are saved): npm run watch
+
     replace code in eslint.config.js with the following:
 
         import pluginJest from "eslint-plugin-jest";
