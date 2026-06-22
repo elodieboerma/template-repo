@@ -22,13 +22,13 @@ Prettier, Jest, to allow ESM usage with Jest, to allow eslint usage with Jest
     (install ESLint): npm init @eslint/config@latest
 
     replace code in eslint.config.js with the following:
-    
+
         import pluginJest from "eslint-plugin-jest";
 
         export default([
             {
                 // update this to match your test files
-                files: ["src/*.js", "src/*.test.js"],
+                files: ["src/*.js", "src/*-spec.js"],
                 plugins: { jest: pluginJest },
                 languageOptions: {
                 globals: pluginJest.environments.globals.globals,
