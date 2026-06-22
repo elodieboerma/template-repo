@@ -1,6 +1,6 @@
-import "eslint-plugin-jest";
+import pluginJest from "eslint-plugin-jest";
 
-export default defineConfig([
+export default([
   {
     // update this to match your test files
     files: ["src/*.js", "src/*.test.js"],

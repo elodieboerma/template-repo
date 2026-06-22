@@ -21,15 +21,39 @@ Prettier, Jest, to allow ESM usage with Jest, to allow eslint usage with Jest
 
     (install ESLint): npm init @eslint/config@latest
 
-    *5 (install it if images are referenced directly in HTML file) npm install --save-dev html-loader*
-    *8 (once git push origin main has been run once):
+    replace code in eslint.config.js with the following:
+    
+        import pluginJest from "eslint-plugin-jest";
+
+        export default([
+            {
+                // update this to match your test files
+                files: ["src/*.js", "src/*.test.js"],
+                plugins: { jest: pluginJest },
+                languageOptions: {
+                globals: pluginJest.environments.globals.globals,
+                },
+                rules: {
+                "jest/no-disabled-tests": "warn",
+                "jest/no-focused-tests": "error",
+                "jest/no-identical-title": "error",
+                "jest/prefer-to-have-length": "warn",
+                "jest/valid-expect": "error",
+                },
+            },
+        ]);
+
+
+
+    *1 (install it if images are referenced directly in HTML file) npm install --save-dev html-loader*
+    *2 (once git push origin main has been run once):
         git branch gh-pages
         --don't forget to switch source branch to this in github pages*
-    *10 (to run ESLint on any file or directory): npx eslint yourfile.js*
-    *14 (to run Prettier on everything): npx prettier . --write
+    *3 (to run ESLint on any file or directory): npx eslint yourfile.js*
+    *4 (to run Prettier on everything): npx prettier . --write
         (to run it on a certain directory): prettier --write app/
         (to run it on a certain file): prettier --write app/components/Button.js
         (to run it on tests): prettier --write "app/**/*.test.js"
-    *15 (ensure everyone is using Pretter; if setup is CI; avoids merge conflicts/other collab issues):
+    *5 (ensure everyone is using Pretter; if setup is CI; avoids merge conflicts/other collab issues):
         npx prettier . --check
-    *16 (change file names in eslint.config.js to match test files)
+    *6 (change file names in eslint.config.js to match test files)
